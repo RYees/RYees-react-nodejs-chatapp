@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import Logo from "../assets/logo.svg";
@@ -23,28 +23,36 @@ const Register = () => {
         draggable: true,
         theme: "dark",
       };
-
+      
+      useEffect(() => {
+        if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
+          navigate("/");
+        }
+      }, []);
+      
       const handleSubmit = async (event) => {
+       
         event.preventDefault();
         if (handleValidation()) {
+          // console.log('work',registerRoute)
           const { email, username, password } = values;
-         
-        //   const { data } = await axios.post(registerRoute, {
-        //     username,
-        //     email,
-        //     password,
-        //   });
+          
+          const { data } = await axios.post(registerRoute, {
+            username,
+            email,
+            password,
+          });
     
-        //   if (data.status === false) {
-        //     toast.error(data.msg, toastOptions);
-        //   }
-        //   if (data.status === true) {
-        //     localStorage.setItem(
-        //       process.env.REACT_APP_LOCALHOST_KEY,
-        //       JSON.stringify(data.user)
-        //     );
-        //     navigate("/");
-        //   }
+          if (data.status === false) {
+            toast.error(data.msg, toastOptions);
+          }
+          if (data.status === true) {
+            localStorage.setItem(
+              process.env.REACT_APP_LOCALHOST_KEY,
+              JSON.stringify(data.user)
+            );
+            navigate("/");
+          }
         }
       };
     
