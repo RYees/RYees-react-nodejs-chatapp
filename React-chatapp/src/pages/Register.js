@@ -25,10 +25,13 @@ const Register = () => {
       };
       
       useEffect(() => {
+        async function naviga() {
         if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
           navigate("/");
         }
-      }, []);
+      }
+      naviga();
+      }, [navigate]);
       
       const handleSubmit = async (event) => {
        

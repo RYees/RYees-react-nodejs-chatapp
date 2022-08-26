@@ -18,11 +18,13 @@ export default function Login() {
     theme: "dark",
   };
   useEffect(() => {
-    if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
+    async function naviga () {
+    if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) 
      navigate("/");
     //  console.log('pen',process.env.REACT_APP_LOCALHOST_KEY)
-    }
-  }, []);
+  }
+  naviga();
+  }, [navigate]);
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
