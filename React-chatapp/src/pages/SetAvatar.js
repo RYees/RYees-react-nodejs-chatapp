@@ -6,7 +6,8 @@ import loader from "../assets/loader.gif";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
-import { setAvatarRoute } from "../utils/APIRoutes";
+import { setAvatarRoute } from "../utils/ApiRoutes";
+
 export default function SetAvatar() {
   const api = `https://api.multiavatar.com/4645646`;
   const navigate = useNavigate();
@@ -55,27 +56,31 @@ export default function SetAvatar() {
   useEffect(async () => {
     const data = [];
     for (let i = 0; i < 4; i++) {
-      const image = await axios.get(
-        `${api}/${Math.round(Math.random() * 1000)}`
-      );
-      const buffer = new Buffer(image.data);
-      data.push(buffer.toString("base64"));
+      // const image = await axios.get(
+      //   `${api}/${Math.round(Math.random() * 1000)}`
+      // );
+      // console.log('beer', image)
+      //const buffer = new Buffer(image.data);
+      // const buffer = Buffer.from(image.data);
+      // data.push(buffer.toString("base64"));
     }
     setAvatars(data);
     setIsLoading(false);
   }, []);
+  
+
   return (
     <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <Container>
           <img src={loader} alt="loader" className="loader" />
         </Container>
-      ) : (
+      ) : ( */}
         <Container>
           <div className="title-container">
             <h1>Pick an Avatar as your profile picture</h1>
           </div>
-          <div className="avatars">
+          {/* <div className="avatars">
             {avatars.map((avatar, index) => {
               return (
                 <div
@@ -92,13 +97,13 @@ export default function SetAvatar() {
                 </div>
               );
             })}
-          </div>
+          </div> */}
           <button onClick={setProfilePicture} className="submit-btn">
             Set as Profile Picture
           </button>
           <ToastContainer />
         </Container>
-      )}
+      {/* )} */}
     </>
   );
 }
