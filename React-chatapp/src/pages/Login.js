@@ -24,19 +24,21 @@ export default function Login() {
     //  console.log('pen',process.env.REACT_APP_LOCALHOST_KEY)
   }
   naviga();
-  }, [navigate]);
+  // eslint-disable-next-line
+  }, []);
 
   const handleChange = (event) => {
+    console.log('tekeded', event)
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
   const validateForm = () => {
     const { username, password } = values;
     if (username === "") {
-      toast.error("Email and Password is required.", toastOptions);
+      toast.error("Username and Password is required.", toastOptions);
       return false;
     } else if (password === "") {
-      toast.error("Email and Password is required.", toastOptions);
+      toast.error("Username and Password is required.", toastOptions);
       return false;
     }
     return true;

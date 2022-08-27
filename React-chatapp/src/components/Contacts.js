@@ -6,6 +6,7 @@ export default function Contacts({ contacts, changeChat }) {
   const [currentUserName, setCurrentUserName] = useState(undefined);
   const [currentUserImage, setCurrentUserImage] = useState(undefined);
   const [currentSelected, setCurrentSelected] = useState(undefined);
+
   useEffect(() => {
     async function naviga() {
     const data = await JSON.parse(
@@ -15,18 +16,20 @@ export default function Contacts({ contacts, changeChat }) {
     setCurrentUserImage(data.avatarImage);
   }
   naviga();
-}, []);
+  }, []);
+
   const changeCurrentChat = (index, contact) => {
     setCurrentSelected(index);
     changeChat(contact);
   };
+
   return (
     <>
       {currentUserImage && currentUserImage && (
         <Container>
           <div className="brand">
             <img src={Logo} alt="logo" />
-            <h3>snappy</h3>
+            <h3>chaTalk</h3>
           </div>
           <div className="contacts">
             {contacts.map((contact, index) => {
