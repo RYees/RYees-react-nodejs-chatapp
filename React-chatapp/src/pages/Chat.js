@@ -42,7 +42,7 @@ export default function Chat() {
         const data = await axios.get(`${allUsersRoute}/${currentUser._id}`);
         setContacts(data.data);
       } else {
-        navigate("/setAvatar");
+        navigate("/avatar");
       }
     }
   }
