@@ -47,6 +47,7 @@ export default function Chat() {
     }
   }
   naviga();
+  // eslint-disable-next-line
   }, [currentUser]);
   
   const handleChatChange = (chat) => {
