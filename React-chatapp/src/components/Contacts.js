@@ -107,7 +107,7 @@ const Container = styled.div`
       }
     }
     .contact {
-      background-color: #f82b10;
+      background-color: #e60808;
       cursor: pointer;
       width: 90%;
       border-radius: 0.2rem;

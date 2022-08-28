@@ -162,7 +162,7 @@ const FormContainer = styled.div`
     }
     h1 {
         color: white;
-        ${'' /* text-transform: uppercase; */}
+        font-style: italic;
     }
     }
     form {
@@ -189,7 +189,7 @@ const FormContainer = styled.div`
     }
     }
     button {
-    background-color: #f82b10;
+    background-color: #e60808;
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -199,7 +199,7 @@ const FormContainer = styled.div`
     font-size: 1rem;
     text-transform: uppercase;
     &:hover {
-        background-color: #b91d08;
+        background-color: #f41d1d;
     }
     }
     span {

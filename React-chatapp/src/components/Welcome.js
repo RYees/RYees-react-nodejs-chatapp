@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Robot from "../assets/csa.gif";
+import Robot from "../assets/75O5.gif";
 export default function Welcome() {
   const [userName, setUserName] = useState("");
   useEffect(() => {
@@ -35,6 +35,6 @@ const Container = styled.div`
     margin-bottom: 20px;
   }
   span {
-    color: #f82b10;
+    color: #f41d1d;
   }
 `;
