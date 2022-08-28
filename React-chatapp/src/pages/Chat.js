@@ -7,7 +7,7 @@ import { allUsersRoute, host } from "../utils/ApiRoutes";
 import ChatContainer from "../components/ChatContainer";
 import Contacts from "../components/Contacts";
 import Welcome from "../components/Welcome";
-import abs from "../assets/abs.jpg";
+import abs from "../assets/abstract.jpg";
 
 export default function Chat() {
   const navigate = useNavigate();
@@ -84,7 +84,7 @@ const Container = styled.div`
   gap: 1rem;
   align-items: center;
   background-color: #ffffff;
-  ${'' /* background-image: url('../assets/absfd.jpg'); */}
+
   .ima {
     object-fit: cover;
     background-size: cover;

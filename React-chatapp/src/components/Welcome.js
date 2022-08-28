@@ -35,6 +35,6 @@ const Container = styled.div`
     margin-bottom: 20px;
   }
   span {
-    color: #4e0eff;
+    color: #f82b10;
   }
 `;

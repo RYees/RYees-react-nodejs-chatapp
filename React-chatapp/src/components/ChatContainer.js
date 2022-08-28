@@ -172,7 +172,7 @@ const Container = styled.div`
     .sended {
       justify-content: flex-end;
       .content {
-        background-color: #fc6208;
+        background-color: #f24d37;
       }
     }
     .recieved {
