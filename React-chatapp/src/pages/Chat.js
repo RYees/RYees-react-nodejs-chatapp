@@ -7,6 +7,7 @@ import { allUsersRoute, host } from "../utils/ApiRoutes";
 import ChatContainer from "../components/ChatContainer";
 import Contacts from "../components/Contacts";
 import Welcome from "../components/Welcome";
+import abs from "../assets/abs.jpg";
 
 export default function Chat() {
   const navigate = useNavigate();
@@ -55,10 +56,11 @@ export default function Chat() {
   const handleChatChange = (chat) => {
     setCurrentChat(chat);
   };
-  
+
   return (
     <>
       <Container>
+      <img className="ima" src={abs} alt="pic"/>
         <div className="container">
           <Contacts contacts={contacts} changeChat={handleChatChange} />        
           {currentChat === undefined ? (
@@ -81,11 +83,23 @@ const Container = styled.div`
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  background-color: #131324;
+  background-color: #ffffff;
+  ${'' /* background-image: url('../assets/absfd.jpg'); */}
+  .ima {
+    object-fit: cover;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: relative
+  }
   .container {
-    height: 85vh;
-    width: 85vw;
-    background-color: #00000076;
+    position: absolute;
+    height: 95vh;
+    width: 98vw;
+    background-color: #000000;
+    opacity: 0.8;
+    box-shadow: 0px 0px 6px 3px #4646465b;
+    border-radius: 4px;
     display: grid;
     grid-template-columns: 25% 75%;
     @media screen and (min-width: 720px) and (max-width: 1080px) {
